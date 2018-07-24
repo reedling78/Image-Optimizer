@@ -1,0 +1,26 @@
+{
+  "name": "myfonts-image-optimizer",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node --max-old-space-size=40960 ./bin/www"
+  },
+  "dependencies": {
+    "body-parser": "~1.18.2",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.9",
+    "express": "~4.15.5",
+    "hbs": "~4.0.1",
+    "image-size": "^0.6.1",
+    "imagemin": "^5.3.1",
+    "imagemin-jpegtran": "^5.0.2",
+    "imagemin-pngquant": "^5.0.1",
+    "morgan": "~1.9.0",
+    "mysql": "^2.15.0",
+    "ncp": "^2.0.0",
+    "request": "^2.83.0",
+    "rimraf": "^2.6.2",
+    "serve-favicon": "~2.4.5",
+    "underscore-node": "^0.1.2"
+  }
+}

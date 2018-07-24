@@ -1,0 +1,157 @@
+
+<script>
+	app.take = {{take}};
+	app.rowsCount = {{rowsCount}};
+	app.pageCount = {{pageCount}};
+</script>
+
+<div class="container-fluid">
+	<h1>{{title}}</h1>
+
+	<p>Images Found {{imageCountFormated}}</p>
+
+	<ul class="pagination-build pagination-sm justify-content-center"></ul>
+
+	<div>{{rowHtml}}</div>
+
+	{{#each rows}}
+
+	<div class="card" >
+  		<div class="card-body">
+
+  			<div class="row">
+  				<div class="col">
+					<h3>{{OriginalFilename}}</h3>
+  				</div>
+  				<div class="col text-right">
+  					<a data-toggle="collapse" href="#collapseExample{{ArtworkID}}" aria-expanded="false" aria-controls="collapseExample{{ArtworkID}}">Show More</a>
+  				</div>
+  			</div>
+
+  			<div class="row">
+				<div class="col collapse" id="collapseExample{{ArtworkID}}">
+
+					<table class="table">
+						<tbody>
+							<tr>
+								<td>ArtworkID</td>
+								<td>{{ArtworkID}}</td>
+								<td>OriginalFilename</td>
+								<td>{{OriginalFilename}}</td>
+							</tr>
+							<tr>
+								<td>ArtworkFormatID</td>
+								<td>{{ArtworkFormatID}}</td>
+								<td>FileSize</td>
+								<td>{{FileSize}}</td>
+							</tr>
+							<tr>
+								<td>PreviewFormatID</td>
+								<td>{{PreviewFormatID}}</td>
+								<td>FullSizeFormatID</td>
+								<td>{{FullSizeFormatID}}</td>
+							</tr>
+
+							<tr>
+								<td>Width</td>
+								<td>{{Width}}</td>
+								<td>Height</td>
+								<td>{{Height}}</td>
+							</tr>
+
+							<tr>
+								<td>MimeType</td>
+								<td>{{MimeType}}</td>
+								<td>ArtworkTypeID</td>
+								<td>{{ArtworkTypeID}}</td>
+							</tr>
+
+
+							<tr>
+								<td>UserID</td>
+								<td>{{UserID}}</td>
+								<td>Active</td>
+								<td>{{Active}}</td>
+							</tr>
+
+							<tr>
+								<td>Created</td>
+								<td>{{Created}}</td>
+								<td>Title</td>
+								<td>{{Title}}</td>
+							</tr>
+
+							<tr>
+								<td>Credit</td>
+								<td>{{Credit}}</td>
+								<td>Notes</td>
+								<td>{{Notes}}</td>
+							</tr>
+
+							<tr>
+								<td>DeletedByUserID</td>
+								<td>{{DeletedByUserID}}</td>
+								<td>DeletedWhen</td>
+								<td>{{DeletedWhen}}</td>
+							</tr>
+
+							<tr>
+								<td>NumColors</td>
+								<td>{{NumColors}}</td>
+								<td>LoseySize</td>
+								<td>{{LoseySize}}</td>
+							</tr>
+
+							<tr>
+								<td>LosslessSize</td>
+								<td>{{LosslessSize}}</td>
+								<td>LosslessSize</td>
+								<td>{{LosslessSize}}</td>
+							</tr>
+						</tbody>
+					</table>
+
+					
+
+				</div>
+			</div>
+
+		{{#each images}}
+			{{#if show}}
+		<div class="row">
+			<div class="col">
+				<hr/>
+				<h4>{{dimension}}</h4>
+			</div>
+		</div>
+
+		
+
+		<div class="row">
+			<div class="col">
+				<figure class="figure">
+  					<img src="/src/{{optimizedPath}}" class="figure-img img-fluid">
+  					<figcaption class="figure-caption">{{originalSizeFormatted}}</figcaption>
+				</figure>
+			</div>
+			<div class="col">
+				<figure class="figure">
+  					<img src="/min/{{optimizedPath}}" class="figure-img img-fluid">
+  					<figcaption class="figure-caption">{{optimizedSizeFormatted}} <span class="text-success font-weight-bold">({{savings}})</span></figcaption>
+				</figure>
+			</div>
+		</div>
+			{{/if}}
+		{{/each}}
+
+		</div>
+	</div>
+
+	<br />
+	</br />
+	
+	{{/each}}
+
+	<ul class="pagination-build pagination-sm justify-content-center"></ul>
+
+</div>
